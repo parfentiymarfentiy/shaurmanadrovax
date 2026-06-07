@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#0a0a0a">
+    
+    <!-- Primary SEO -->
+    <title>Шаурма на Дровах & Мясо на Дровах | Доставка Одесса</title>
+    <meta name="description" content="Самая сочная шаурма и мясо на мангале в Одессе. Шашлык, люля-кебаб, скумбрия. Доставка по всему городу. 📍 Бочарова 60, Крымская 60, Глушко 14/3">
+    <meta name="keywords" content="шаурма одесса, мясо на дровах, шашлык доставка, люля кебаб, мангал одесса, доставка еды одесса, бочарова, крымская, глушко">
+    <meta name="author" content="Шаурма на Дровах">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="geo.region" content="UA-51">
+    <meta name="geo.placename" content="Odessa">
+    <link rel="canonical" href="https://shaurma-na-drovah.ua">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="restaurant">
+    <meta property="og:site_name" content="Шаурма на Дровах">
+    <meta property="og:title" content="Шаурма на Дровах & Мясо на Дровах | Одесса">
+    <meta property="og:description" content="Сочная шаурма и мясо на мангале с доставкой по Одессе. 3 точки в городе.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1561651881-dcf008a708a7?w=1200">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:locale:alternate" content="uk_UA">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Шаурма на Дровах | Доставка Одесса">
+    <meta name="twitter:description" content="Сочная шаурма и мясо на мангале">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>">
+    
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700;800;900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Schema.org LocalBusiness -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "@id": "https://shaurma-na-drovah.ua/#restaurant",
+        "name": "Шаурма на Дровах & Мясо на Дровах",
+        "image": "https://images.unsplash.com/photo-1561651881-dcf008a708a7",
+        "description": "Сеть шаурмичных и мангала в Одессе",
+        "address": [
+            {"@type": "PostalAddress", "streetAddress": "Генерала Бочарова, 60", "addressLocality": "Одесса", "addressCountry": "UA"},
+            {"@type": "PostalAddress", "streetAddress": "Крымская, 60", "addressLocality": "Одесса", "addressCountry": "UA"},
+            {"@type": "PostalAddress", "streetAddress": "Академика Глушко, 14/3", "addressLocality": "Одесса", "addressCountry": "UA"}
+        ],
+        "geo": {"@type": "GeoCoordinates", "latitude": 46.4775, "longitude": 30.7326},
+        "url": "https://shaurma-na-drovah.ua",
+        "telephone": "+380669750007",
+        "priceRange": "₴₴",
+        "servesCuisine": ["Shawarma", "Barbecue", "Grill"],
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+            "opens": "10:00", "closes": "23:00"
+        },
+        "acceptsReservations": "True",
+        "hasMenu": "https://shaurma-na-drovah.ua/#menu"
+    }
+    </script>
+</head>
+<body>
+
+<!-- ============ PRELOADER ============ -->
+<div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__inner">
+        <div class="preloader__flame">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <p class="preloader__text" data-i18n="preloader">Разжигаем мангал...</p>
+    </div>
+</div>
+
+<!-- ============ HEADER ============ -->
+<header class="header" id="header">
+    <div class="container header__inner">
+        <a href="#" class="logo" aria-label="Главная">
+            <div class="logo__icon">
+                <i class="fa-solid fa-fire-flame-curved"></i>
+            </div>
+            <div class="logo__text">
+                <span class="logo__main" data-i18n="logoMain">ШАУРМА НА ДРОВАХ</span>
+                <span class="logo__sub" data-i18n="logoSub">& МЯСО НА ДРОВАХ</span>
+            </div>
+        </a>
+
+        <nav class="nav" aria-label="Главное меню">
+            <a href="#menu" class="nav__link" data-i18n="navMenu">Меню</a>
+            <a href="#locations" class="nav__link" data-i18n="navLocations">Адреса</a>
+            <a href="#delivery" class="nav__link" data-i18n="navDelivery">Доставка</a>
+            <a href="#contacts" class="nav__link" data-i18n="navContacts">Контакты</a>
+        </nav>
+
+        <div class="header__actions">
+            <button class="lang-toggle" id="langToggle" aria-label="Переключить язык">
+                <span class="lang-toggle__dot"></span>
+                <span class="lang-toggle__text">UA</span>
+            </button>
+
+            <button class="cart-trigger" id="cartTrigger" aria-label="Открыть корзину">
+                <i class="fa-solid fa-basket-shopping"></i>
+                <span class="cart-trigger__badge" id="cartBadge">0</span>
+            </button>
+
+            <button class="burger" id="burger" aria-label="Меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- ============ MOBILE MENU ============ -->
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <div class="mobile-menu__backdrop"></div>
+    <div class="mobile-menu__panel">
+        <button class="mobile-menu__close" id="mobileClose" aria-label="Закрыть">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <nav class="mobile-menu__nav">
+            <a href="#menu" data-i18n="navMenu">Меню</a>
+            <a href="#locations" data-i18n="navLocations">Адреса</a>
+            <a href="#delivery" data-i18n="navDelivery">Доставка</a>
+            <a href="#contacts" data-i18n="navContacts">Контакты</a>
+        </nav>
+        <div class="mobile-menu__footer">
+            <a href="tel:+380669750007" class="mobile-menu__phone">
+                <i class="fa-solid fa-phone"></i> 066-975-00-07
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero" aria-labelledby="heroTitle">
+    <div class="hero__bg">
+        <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1920&q=80" alt="Мясо на мангале" loading="eager">
+        <div class="hero__overlay"></div>
+        <div class="hero__particles" aria-hidden="true"></div>
+    </div>
+
+    <div class="container hero__content">
+        <div class="hero__badge">
+            <i class="fa-solid fa-fire"></i>
+            <span data-i18n="heroBadge">Работаем с 2018 года</span>
+        </div>
+        
+        <h1 class="hero__title" id="heroTitle">
+            <span data-i18n="heroTitle1">Самая сочная</span>
+            <span class="hero__title-accent">
+                <span data-i18n="heroTitle2">ШАУРМА</span>
+                <svg class="hero__underline" viewBox="0 0 300 12" preserveAspectRatio="none" aria-hidden="true">
+                    <path d="M0,6 Q75,0 150,6 T300,6" stroke="currentColor" stroke-width="3" fill="none"/>
+                </svg>
+            </span>
+            <span data-i18n="heroTitle3">в Одессе</span>
+        </h1>
+
+        <p class="hero__subtitle" data-i18n="heroSubtitle">
+            Готовим на дровах и углях. Доставим горячую шаурму и мясо с мангала к вашей двери за 40 минут.
+        </p>
+
+        <div class="hero__cta">
+            <a href="#menu" class="btn btn--primary btn--lg">
+                <span data-i18n="heroCta">Смотреть меню</span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a href="#locations" class="btn btn--ghost btn--lg">
+                <i class="fa-solid fa-location-dot"></i>
+                <span data-i18n="heroCta2">Наши точки</span>
+            </a>
+        </div>
+
+        <div class="hero__stats">
+            <div class="hero__stat">
+                <strong>3</strong>
+                <span data-i18n="heroStat1">точки в Одессе</span>
+            </div>
+            <div class="hero__stat">
+                <strong>40<span>мин</span></strong>
+                <span data-i18n="heroStat2">доставка</span>
+            </div>
+            <div class="hero__stat">
+                <strong>4.9</strong>
+                <span data-i18n="heroStat3">рейтинг</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero__scroll">
+        <span data-i18n="heroScroll">Листайте вниз</span>
+        <i class="fa-solid fa-chevron-down"></i>
+    </div>
+</section>
+
+<!-- ============ LOCATIONS (динамически из Firebase) ============ -->
+<section class="locations" id="locations" aria-labelledby="locTitle">
+    <div class="container">
+        <header class="section-head">
+            <span class="section-head__eyebrow" data-i18n="locEyebrow">Наши точки</span>
+            <h2 class="section-head__title" id="locTitle" data-i18n="locTitle">Где нас найти</h2>
+            <p class="section-head__desc" data-i18n="locDesc">Сеть шаурмичных в разных районах Одессы</p>
+        </header>
+        <ul class="locations__list" id="locationsList">
+            <!-- Рендерится из Firebase -->
+        </ul>
+    </div>
+</section>
+
+<!-- ============ MENU ============ -->
+<section class="menu" id="menu" aria-labelledby="menuTitle">
+    <div class="container">
+        <header class="section-head">
+            <span class="section-head__eyebrow" data-i18n="menuEyebrow">Меню</span>
+            <h2 class="section-head__title" id="menuTitle" data-i18n="menuTitle">Готовим на огне</h2>
+            <p class="section-head__desc" data-i18n="menuDesc">Сочное мясо на мангале, фирменная шаурма и авторские блюда</p>
+        </header>
+
+        <div class="menu__filters" id="menuFilters" role="tablist">
+            <button class="filter active" data-filter="all" role="tab" aria-selected="true" data-i18n="filterAll">Всё меню</button>
+            <button class="filter" data-filter="shawarma" role="tab" data-i18n="filterShawarma">Шаурма</button>
+            <button class="filter" data-filter="meat" role="tab" data-i18n="filterMeat">Мясо на дровах</button>
+            <button class="filter" data-filter="grill" role="tab" data-i18n="filterGrill">На мангале</button>
+            <button class="filter" data-filter="sides" role="tab" data-i18n="filterSides">Гарниры</button>
+        </div>
+
+        <div class="menu__grid" id="menuGrid" role="tabpanel"></div>
+    </div>
+</section>
+
+<!-- ============ DELIVERY ============ -->
+<section class="delivery" id="delivery" aria-labelledby="deliveryTitle">
+    <div class="container delivery__inner">
+        <div class="delivery__content">
+            <header class="section-head section-head--left">
+                <span class="section-head__eyebrow" data-i18n="deliveryEyebrow">Доставка</span>
+                <h2 class="section-head__title" id="deliveryTitle" data-i18n="deliveryTitle">По всей Одессе</h2>
+            </header>
+
+            <p class="delivery__text" data-i18n="deliveryText">
+                Привезём горячую шаурму и мясо с мангала прямо к вашей двери. 
+                Работаем без выходных, принимаем оплату наличными или картой.
+            </p>
+
+            <ul class="delivery__perks">
+                <li>
+                    <div class="delivery__perk-icon"><i class="fa-solid fa-motorcycle"></i></div>
+                    <div>
+                        <strong data-i18n="perk1Title">40-60 минут</strong>
+                        <span data-i18n="perk1Text">Среднее время доставки</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="delivery__perk-icon"><i class="fa-solid fa-gift"></i></div>
+                    <div>
+                        <strong data-i18n="perk2Title">Бесплатно от 500 ₴</strong>
+                        <span data-i18n="perk2Text">В пределах города</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="delivery__perk-icon"><i class="fa-solid fa-credit-card"></i></div>
+                    <div>
+                        <strong data-i18n="perk3Title">Наличные или карта</strong>
+                        <span data-i18n="perk3Text">Любой удобный способ</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="delivery__visual">
+            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&q=80" alt="Доставка еды" loading="lazy">
+            <div class="delivery__visual-badge">
+                <i class="fa-solid fa-fire"></i>
+                <span data-i18n="deliveryHot">Всегда горячее</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ CART DRAWER ============ -->
+<div class="cart-drawer" id="cartDrawer" aria-hidden="true">
+    <div class="cart-drawer__backdrop" data-close-cart></div>
+    <aside class="cart-drawer__panel">
+        <header class="cart-drawer__head">
+            <h3 data-i18n="cartTitle">Ваш заказ</h3>
+            <button class="cart-drawer__close" data-close-cart aria-label="Закрыть">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </header>
+
+        <div class="cart-drawer__body" id="cartBody">
+            <div class="cart-empty">
+                <i class="fa-solid fa-basket-shopping"></i>
+                <p data-i18n="cartEmpty">Корзина пока пуста</p>
+                <button class="btn btn--primary" data-close-cart data-i18n="cartBrowse">Выбрать блюда</button>
+            </div>
+        </div>
+
+        <footer class="cart-drawer__foot" id="cartFoot" style="display:none">
+            <div class="cart-drawer__row">
+                <span data-i18n="cartItems">Позиций:</span>
+                <strong id="cartItemsCount">0</strong>
+            </div>
+            <div class="cart-drawer__row cart-drawer__row--total">
+                <span data-i18n="cartTotal">Итого:</span>
+                <strong id="cartTotal">0 ₴</strong>
+            </div>
+            <button class="btn btn--primary btn--full" id="checkoutBtn" data-i18n="cartCheckout">
+                Оформить заказ
+            </button>
+        </footer>
+    </aside>
+</div>
+
+<!-- ============ CHECKOUT MODAL ============ -->
+<div class="modal" id="checkoutModal" aria-hidden="true">
+    <div class="modal__backdrop" data-close-modal></div>
+    <div class="modal__dialog" role="dialog" aria-labelledby="checkoutTitle">
+        <button class="modal__close" data-close-modal aria-label="Закрыть">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <header class="modal__head">
+            <h3 id="checkoutTitle" data-i18n="checkoutTitle">Оформление заказа</h3>
+            <p data-i18n="checkoutSub">Заполните данные для доставки по Одессе</p>
+        </header>
+
+        <form class="checkout-form" id="checkoutForm" novalidate>
+            <div class="field">
+                <label for="fName" class="field__label" data-i18n="fieldName">Ваше имя</label>
+                <div class="field__input">
+                    <i class="fa-regular fa-user"></i>
+                    <input type="text" id="fName" name="name" required minlength="2" placeholder="Иван" autocomplete="name">
+                </div>
+                <span class="field__error" data-error="name"></span>
+            </div>
+
+            <div class="field">
+                <label for="fPhone" class="field__label" data-i18n="fieldPhone">Телефон</label>
+                <div class="field__input">
+                    <i class="fa-solid fa-phone"></i>
+                    <input type="tel" id="fPhone" name="phone" required placeholder="+380 __ ___ __ __" autocomplete="tel">
+                </div>
+                <span class="field__error" data-error="phone"></span>
+            </div>
+
+            <div class="field">
+                <label for="fAddress" class="field__label" data-i18n="fieldAddress">Адрес доставки</label>
+                <div class="field__input">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <input type="text" id="fAddress" name="address" required placeholder="ул. Дерибасовская, 10, кв. 5" autocomplete="street-address">
+                </div>
+                <span class="field__error" data-error="address"></span>
+            </div>
+
+            <div class="field">
+                <label for="fComment" class="field__label" data-i18n="fieldComment">Комментарий</label>
+                <div class="field__input field__input--textarea">
+                    <i class="fa-regular fa-comment"></i>
+                    <textarea id="fComment" name="comment" rows="2" placeholder="Например: без лука, подъезд 2"></textarea>
+                </div>
+            </div>
+
+            <div class="checkout-summary" id="checkoutSummary"></div>
+
+            <button type="submit" class="btn btn--primary btn--full btn--lg" id="submitBtn">
+                <i class="fa-solid fa-check"></i>
+                <span data-i18n="checkoutSubmit">Подтвердить заказ</span>
+            </button>
+        </form>
+    </div>
+</div>
+
+<!-- ============ SUCCESS MODAL ============ -->
+<div class="modal modal--success" id="successModal" aria-hidden="true">
+    <div class="modal__backdrop" data-close-modal></div>
+    <div class="modal__dialog modal__dialog--center" role="dialog">
+        <div class="success-anim">
+            <svg viewBox="0 0 52 52" aria-hidden="true">
+                <circle class="success-anim__circle" cx="26" cy="26" r="25" fill="none"/>
+                <path class="success-anim__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+            </svg>
+        </div>
+        <h3 data-i18n="successTitle">Спасибо за заказ!</h3>
+        <p data-i18n="successText">Оператор перезвонит вам в ближайшее время для подтверждения.</p>
+        <div class="success-meta">
+            <div class="success-meta__item">
+                <i class="fa-solid fa-hashtag"></i>
+                <span>№</span>
+                <strong id="successOrderId">—</strong>
+            </div>
+        </div>
+        <button class="btn btn--primary btn--lg" data-close-modal data-i18n="successClose">Отлично</button>
+    </div>
+</div>
+
+<!-- ============ PASSWORD MODAL ============ -->
+<div class="modal modal--password" id="passwordModal" aria-hidden="true">
+    <div class="modal__backdrop" data-close-modal></div>
+    <div class="modal__dialog modal__dialog--center" role="dialog">
+        <button class="modal__close" data-close-modal aria-label="Закрыть">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="password-icon">
+            <i class="fa-solid fa-shield-halved"></i>
+        </div>
+        <h3 data-i18n="pwdTitle">Доступ ограничен</h3>
+        <p data-i18n="pwdSub">Введите пароль для входа в панель администратора</p>
+        <form class="password-form" id="passwordForm" novalidate>
+            <div class="field">
+                <div class="field__input">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" id="pwdInput" autocomplete="current-password" placeholder="••••••••••••••" required>
+                </div>
+                <span class="field__error" id="pwdError"></span>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full btn--lg">
+                <i class="fa-solid fa-right-to-bracket"></i>
+                <span data-i18n="pwdSubmit">Войти</span>
+            </button>
+        </form>
+    </div>
+</div>
+
+<!-- ============ PRODUCT MODAL ============ -->
+<div class="modal modal--product" id="productModal" aria-hidden="true">
+    <div class="modal__backdrop" data-close-modal></div>
+    <div class="modal__dialog" role="dialog">
+        <button class="modal__close" data-close-modal aria-label="Закрыть">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <header class="modal__head">
+            <h3 id="productModalTitle">Добавить товар</h3>
+            <p data-i18n="productSub">Заполните данные блюда</p>
+        </header>
+        <form class="product-form" id="productForm" novalidate>
+            <input type="hidden" id="productId">
+            
+            <div class="form-row">
+                <div class="field">
+                    <label class="field__label">Название (RU) *</label>
+                    <div class="field__input"><i class="fa-solid fa-pen"></i><input type="text" id="productNameRu" required></div>
+                </div>
+                <div class="field">
+                    <label class="field__label">Название (UA) *</label>
+                    <div class="field__input"><i class="fa-solid fa-pen"></i><input type="text" id="productNameUa" required></div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="field">
+                    <label class="field__label">Описание (RU)</label>
+                    <div class="field__input field__input--textarea"><i class="fa-regular fa-comment"></i><textarea id="productDescRu" rows="2"></textarea></div>
+                </div>
+                <div class="field">
+                    <label class="field__label">Описание (UA)</label>
+                    <div class="field__input field__input--textarea"><i class="fa-regular fa-comment"></i><textarea id="productDescUa" rows="2"></textarea></div>
+                </div>
+            </div>
+
+            <div class="form-row form-row--3">
+                <div class="field">
+                    <label class="field__label">Категория</label>
+                    <select id="productCategory" class="form-select">
+                        <option value="shawarma">Шаурма</option>
+                        <option value="meat">Мясо на дровах</option>
+                        <option value="grill">На мангале</option>
+                        <option value="sides">Гарниры</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label class="field__label">Цена (₴) *</label>
+                    <div class="field__input"><i class="fa-solid fa-hryvnia-sign"></i><input type="number" id="productPrice" required min="0"></div>
+                </div>
+                <div class="field">
+                    <label class="field__label">Вес</label>
+                    <div class="field__input"><i class="fa-solid fa-weight-hanging"></i><input type="text" id="productWeight" placeholder="350г"></div>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="field__label">Бейдж</label>
+                <select id="productBadge" class="form-select">
+                    <option value="">Без бейджа</option>
+                    <option value="hit">🔥 Хит</option>
+                    <option value="new">✨ Новинка</option>
+                    <option value="hot">🌶️ Острое</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label class="field__label">Фото (загрузить файл)</label>
+                <div class="image-upload" id="imageUpload">
+                    <input type="file" id="productImageFile" accept="image/*" hidden>
+                    <div class="image-upload__placeholder" id="imagePlaceholder">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                        <span>Нажмите, чтобы выбрать фото</span>
+                        <small>JPG, PNG, WebP. Будет сжато автоматически.</small>
+                    </div>
+                    <div class="image-upload__preview" id="imagePreview" style="display:none">
+                        <img id="imagePreviewImg" src="" alt="">
+                        <button type="button" class="image-upload__remove" id="imageRemove"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="field__label">Или вставьте URL фото</label>
+                <div class="field__input"><i class="fa-solid fa-link"></i><input type="url" id="productImageUrl" placeholder="https://..."></div>
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--full btn--lg">
+                <i class="fa-solid fa-floppy-disk"></i>
+                <span data-i18n="productSave">Сохранить товар</span>
+            </button>
+        </form>
+    </div>
+</div>
+
+<!-- ============ LOCATION MODAL ============ -->
+<div class="modal modal--product" id="locationModal" aria-hidden="true">
+    <div class="modal__backdrop" data-close-modal></div>
+    <div class="modal__dialog" role="dialog">
+        <button class="modal__close" data-close-modal aria-label="Закрыть">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <header class="modal__head">
+            <h3 id="locationModalTitle">Добавить точку</h3>
+            <p>Заполните данные фастфуда</p>
+        </header>
+        <form class="product-form" id="locationForm" novalidate>
+            <input type="hidden" id="locationId">
+            
+            <div class="form-row">
+                <div class="field">
+                    <label class="field__label">Район / Метка (RU) *</label>
+                    <div class="field__input"><i class="fa-solid fa-tag"></i><input type="text" id="locTagRu" placeholder="Район Котовского" required></div>
+                </div>
+                <div class="field">
+                    <label class="field__label">Район / Метка (UA) *</label>
+                    <div class="field__input"><i class="fa-solid fa-tag"></i><input type="text" id="locTagUa" placeholder="Район Котовського" required></div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="field">
+                    <label class="field__label">Адрес (RU) *</label>
+                    <div class="field__input"><i class="fa-solid fa-location-dot"></i><input type="text" id="locAddressRu" placeholder="ул. Генерала Бочарова, 60" required></div>
+                </div>
+                <div class="field">
+                    <label class="field__label">Адрес (UA) *</label>
+                    <div class="field__input"><i class="fa-solid fa-location-dot"></i><input type="text" id="locAddressUa" placeholder="вул. Генерала Бочарова, 60" required></div>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="field__label">Полный адрес для геокодинга *</label>
+                <div class="field__input">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                    <input type="text" id="locFullAddress" placeholder="Одесса, Генерала Бочарова 60" required>
+                </div>
+                <small style="color:var(--c-text-3);font-size:11px">Нужен для автоматического определения координат</small>
+            </div>
+
+            <div class="form-row">
+                <div class="field">
+                    <label class="field__label">Телефон</label>
+                    <div class="field__input"><i class="fa-solid fa-phone"></i><input type="tel" id="locPhone" placeholder="066-975-00-07"></div>
+                </div>
+                <div class="field">
+                    <label class="field__label">Часы работы</label>
+                    <div class="field__input"><i class="fa-regular fa-clock"></i><input type="text" id="locHours" placeholder="10:00 — 23:00"></div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="field">
+                    <label class="field__label">Широта (lat)</label>
+                    <div class="field__input"><i class="fa-solid fa-arrows-up-down"></i><input type="number" step="0.000001" id="locLat" placeholder="46.4775"></div>
+                </div>
+                <div class="field">
+                    <label class="field__label">Долгота (lng)</label>
+                    <div class="field__input"><i class="fa-solid fa-arrows-left-right"></i><input type="number" step="0.000001" id="locLng" placeholder="30.7326"></div>
+                </div>
+            </div>
+
+            <button type="button" class="btn btn--ghost btn--full" id="geocodeBtn" style="margin-bottom:12px">
+                <i class="fa-solid fa-magnifying-glass-location"></i>
+                <span>Определить координаты автоматически</span>
+            </button>
+
+            <button type="submit" class="btn btn--primary btn--full btn--lg">
+                <i class="fa-solid fa-floppy-disk"></i>
+                <span>Сохранить точку</span>
+            </button>
+        </form>
+    </div>
+</div>
+
+<!-- ============ PREPAY MODAL ============ -->
+<div class="modal modal--prepay" id="prepayModal" aria-hidden="true">
+    <div class="modal__backdrop" data-close-modal></div>
+    <div class="modal__dialog modal__dialog--center" role="dialog">
+        <button class="modal__close" data-close-modal aria-label="Закрыть">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="prepay-icon">
+            <i class="fa-solid fa-credit-card"></i>
+        </div>
+        <h3 data-i18n="prepayTitle">Требуется предоплата</h3>
+        <p class="prepay-distance" id="prepayDistance"></p>
+        <p class="prepay-message" id="prepayMessage"></p>
+        <div class="prepay-card-info">
+            <div class="prepay-amount">
+                <span data-i18n="prepayAmount">Сумма предоплаты:</span>
+                <strong id="prepayAmountValue">0 ₴</strong>
+            </div>
+            <div class="prepay-card">
+                <div class="prepay-card__label" data-i18n="prepayCardLabel">Номер карты:</div>
+                <div class="prepay-card__number">
+                    <span id="prepayCardNum">—</span>
+                    <button class="prepay-card__copy" id="copyCardBtn" title="Копировать">
+                        <i class="fa-regular fa-copy"></i>
+                    </button>
+                </div>
+                <div class="prepay-card__holder" id="prepayCardHolder"></div>
+                <div class="prepay-card__bank" id="prepayCardBank"></div>
+            </div>
+        </div>
+        <button class="btn btn--primary btn--full btn--lg" id="prepayConfirmed">
+            <i class="fa-solid fa-check"></i>
+            <span data-i18n="prepayConfirmed">Я оплатил, подтвердить заказ</span>
+        </button>
+        <button class="btn btn--ghost btn--full" data-close-modal style="margin-top:8px" data-i18n="prepayCancel">
+            Отменить
+        </button>
+    </div>
+</div>
+
+<!-- ============ ADMIN PANEL ============ -->
+<div class="admin" id="adminPanel" aria-hidden="true">
+    <header class="admin__head">
+        <div class="admin__title">
+            <i class="fa-solid fa-shield-halved"></i>
+            <h2 data-i18n="adminTitle">Панель администратора</h2>
+        </div>
+        <div class="admin__actions">
+            <button class="btn btn--ghost btn--sm" id="adminLogout">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span data-i18n="adminLogout">Выйти</span>
+            </button>
+            <button class="btn btn--ghost btn--sm" id="adminClose">
+                <i class="fa-solid fa-xmark"></i>
+                <span data-i18n="adminClose">Закрыть</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- TABS -->
+    <div class="admin__tabs">
+        <button class="admin-tab active" data-tab="orders">
+            <i class="fa-solid fa-receipt"></i>
+            <span data-i18n="tabOrders">Заказы</span>
+            <span class="admin-tab__badge" id="tabOrdersBadge">0</span>
+        </button>
+        <button class="admin-tab" data-tab="menu">
+            <i class="fa-solid fa-utensils"></i>
+            <span data-i18n="tabMenu">Меню</span>
+        </button>
+        <button class="admin-tab" data-tab="locations">
+            <i class="fa-solid fa-location-dot"></i>
+            <span data-i18n="tabLocations">Точки</span>
+        </button>
+        <button class="admin-tab" data-tab="settings">
+            <i class="fa-solid fa-gear"></i>
+            <span data-i18n="tabSettings">Настройки</span>
+        </button>
+    </div>
+
+    <!-- TAB: ORDERS -->
+    <div class="admin__tab-content active" data-tab-content="orders">
+        <div class="admin__stats">
+            <div class="admin-stat">
+                <span class="admin-stat__label" data-i18n="adminStatOrders">Всего заказов</span>
+                <strong class="admin-stat__value" id="statOrders">0</strong>
+            </div>
+            <div class="admin-stat">
+                <span class="admin-stat__label" data-i18n="adminStatRevenue">Выручка</span>
+                <strong class="admin-stat__value" id="statRevenue">0 ₴</strong>
+            </div>
+            <div class="admin-stat">
+                <span class="admin-stat__label" data-i18n="adminStatAvg">Средний чек</span>
+                <strong class="admin-stat__value" id="statAvg">0 ₴</strong>
+            </div>
+            <div class="admin-stat">
+                <span class="admin-stat__label" data-i18n="adminStatNew">Новых</span>
+                <strong class="admin-stat__value" id="statNew">0</strong>
+            </div>
+        </div>
+        <div class="admin__toolbar">
+            <button class="btn btn--ghost btn--sm" id="adminExport">
+                <i class="fa-solid fa-download"></i>
+                <span data-i18n="adminExport">Экспорт JSON</span>
+            </button>
+            <button class="btn btn--ghost btn--sm" id="adminClear">
+                <i class="fa-solid fa-trash"></i>
+                <span data-i18n="adminClear">Очистить</span>
+            </button>
+        </div>
+        <div class="admin__table-wrap">
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th data-i18n="thId">№</th>
+                        <th data-i18n="thTime">Время</th>
+                        <th data-i18n="thClient">Клиент</th>
+                        <th data-i18n="thPhone">Телефон</th>
+                        <th data-i18n="thAddress">Адрес</th>
+                        <th data-i18n="thItems">Состав</th>
+                        <th data-i18n="thSum">Сумма</th>
+                        <th data-i18n="thStatus">Статус</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="adminTableBody">
+                    <tr class="admin-table__empty">
+                        <td colspan="9" data-i18n="adminEmpty">Заказов пока нет</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- TAB: MENU MANAGEMENT -->
+    <div class="admin__tab-content" data-tab-content="menu">
+        <div class="admin__toolbar">
+            <button class="btn btn--primary btn--sm" id="addProductBtn">
+                <i class="fa-solid fa-plus"></i>
+                <span data-i18n="productAdd">Добавить товар</span>
+            </button>
+            <button class="btn btn--ghost btn--sm" id="resetMenuBtn">
+                <i class="fa-solid fa-rotate-left"></i>
+                <span data-i18n="menuReset">Сбросить к дефолтному</span>
+            </button>
+        </div>
+        <div class="admin-menu-grid" id="adminMenuGrid"></div>
+    </div>
+
+    <!-- TAB: LOCATIONS MANAGEMENT -->
+    <div class="admin__tab-content" data-tab-content="locations">
+        <div class="admin__toolbar">
+            <button class="btn btn--primary btn--sm" id="addLocationBtn">
+                <i class="fa-solid fa-plus"></i>
+                <span>Добавить точку</span>
+            </button>
+            <button class="btn btn--ghost btn--sm" id="resetLocationsBtn">
+                <i class="fa-solid fa-rotate-left"></i>
+                <span>Сбросить к исходным</span>
+            </button>
+        </div>
+        <div class="admin-locations-grid" id="adminLocationsGrid"></div>
+    </div>
+
+    <!-- TAB: SETTINGS -->
+    <div class="admin__tab-content" data-tab-content="settings">
+        <div class="admin-settings">
+            <h3 style="margin-bottom:20px;color:var(--c-fire-2)">⚙️ Настройки доставки</h3>
+            <form class="settings-form" id="settingsForm">
+                <div class="form-row form-row--3">
+                    <div class="field">
+                        <label class="field__label">Радиус бесплатной доставки (км)</label>
+                        <div class="field__input">
+                            <i class="fa-solid fa-ruler"></i>
+                            <input type="number" id="settingRadius" min="0" max="50" step="0.5" value="4">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="field__label">Процент предоплаты (%)</label>
+                        <div class="field__input">
+                            <i class="fa-solid fa-percent"></i>
+                            <input type="number" id="settingPercent" min="0" max="100" step="1" value="15">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="field__label">Мин. сумма заказа (₴)</label>
+                        <div class="field__input">
+                            <i class="fa-solid fa-hryvnia-sign"></i>
+                            <input type="number" id="settingMinOrder" min="0" step="10" value="0">
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="field__label">Номер карты для предоплаты</label>
+                    <div class="field__input">
+                        <i class="fa-solid fa-credit-card"></i>
+                        <input type="text" id="settingCardNumber" placeholder="5168 XXXX XXXX XXXX">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="field">
+                        <label class="field__label">Получатель (имя)</label>
+                        <div class="field__input">
+                            <i class="fa-regular fa-user"></i>
+                            <input type="text" id="settingCardName" placeholder="ІВАНОВ ІВАН ІВАНОВИЧ">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="field__label">Банк</label>
+                        <div class="field__input">
+                            <i class="fa-solid fa-building-columns"></i>
+                            <input type="text" id="settingCardBank" placeholder="Monobank">
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="field__label">Текст для клиента при предоплате</label>
+                    <div class="field__input field__input--textarea">
+                        <i class="fa-regular fa-comment"></i>
+                        <textarea id="settingPrepayMessage" rows="3" placeholder="Для подтверждения заказа требуется предоплата..."></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn--primary btn--full btn--lg">
+                    <i class="fa-solid fa-floppy-disk"></i>
+                    <span>Сохранить настройки</span>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer" id="contacts">
+    <div class="container footer__inner">
+        <div class="footer__brand">
+            <a href="#" class="logo">
+                <div class="logo__icon"><i class="fa-solid fa-fire-flame-curved"></i></div>
+                <div class="logo__text">
+                    <span class="logo__main" data-i18n="logoMain">ШАУРМА НА ДРОВАХ</span>
+                    <span class="logo__sub" data-i18n="logoSub">& МЯСО НА ДРОВАХ</span>
+                </div>
+            </a>
+            <p class="footer__tagline" data-i18n="footerTag">Сеть шаурмичных и мангала в Одессе</p>
+        </div>
+
+        <div class="footer__col">
+            <h4 data-i18n="footerContacts">Контакты</h4>
+            <ul id="footerPhones">
+                <li><i class="fa-solid fa-phone"></i><a href="tel:+380669750007">066-975-00-07</a></li>
+                <li><i class="fa-solid fa-phone"></i><a href="tel:+380739750007">073-975-00-07</a></li>
+                <li><i class="fa-solid fa-phone"></i><a href="tel:+380969750007">096-975-00-07</a></li>
+            </ul>
+        </div>
+
+        <div class="footer__col">
+            <h4 data-i18n="footerHours">Режим работы</h4>
+            <ul>
+                <li><i class="fa-regular fa-clock"></i><span data-i18n="footerWork">Ежедневно</span></li>
+                <li><i class="fa-solid fa-calendar"></i> 10:00 — 23:00</li>
+                <li><i class="fa-solid fa-truck"></i><span data-i18n="footerDelivery">Доставка по всей Одессе</span></li>
+            </ul>
+        </div>
+
+        <div class="footer__col">
+            <h4 data-i18n="footerSocial">Мы в соцсетях</h4>
+            <div class="footer__social">
+                <a href="https://www.instagram.com/shaurma_na_drovax/" target="_blank" rel="noopener" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://www.tiktok.com/@shaurma_na_drovax" target="_blank" rel="noopener" aria-label="TikTok">
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer__bottom">
+        <div class="container footer__bottom-inner">
+            <p>© 2026 Шаурма на Дровах · Одесса</p>
+            <button class="footer__admin-link" id="footerAdminTrigger" title="Панель администратора">
+                <i class="fa-solid fa-lock"></i>
+                <span>Админ</span>
+            </button>
+        </div>
+    </div>
+</footer>
+
+<!-- ============ TOAST ============ -->
+<div class="toast" id="toast" aria-live="polite">
+    <i class="fa-solid fa-circle-check"></i>
+    <span id="toastMsg">Добавлено</span>
+</div>
+
+<script src="script.js" defer></script>
+</body>
+</html>
